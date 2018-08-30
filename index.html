@@ -5,6 +5,12 @@
 <title>TODO:Title For Your Game</title>
 <!-- NOTE: this CSS sets up the ".figure" class to center images, and instructs images in ".figure"s to have space around them and to render crisp pixel edges when scaled [e.g. for retina displays]. -->
 <style>
+body {
+	background:#fff;
+	color:#000;
+	margin:0;
+	padding:0;
+}
 .figure {
 	text-align:center;
 }
@@ -12,10 +18,40 @@
 	margin: 0px 20px;
 	image-rendering: pixelated;
 }
+h1 {
+	margin:0;
+	padding: 5px 5px 0 5px;
+	background:#ddd;
+}
+#author {
+	margin:0;
+	padding: 0 10px 0 30px;
+	border-bottom: 3px solid #ccc;
+	background:#ddd;
+}
+h2 {
+	margin:1em 0;
+	padding: 5px 5px 5px 0;
+	background:#ddd;
+	border-bottom: 3px solid #ccc;
+}
+h1, #author, h2 {
+	background: linear-gradient(to right,
+		#dddddd   0%, #dddddd  75%,
+		#dce8d2  75%, #d2e8e1  80%,
+		#d2e8e1  80%, #d2e8e1  85%,
+		#d2e2e8  85%, #d2e2e8  90%,
+		#d7d2e8  90%, #d7d2e8  95%,
+		#e8d2e8  95%, #e8d2e8 100%);
+}
+p {
+	margin: 1em;
+}
 </style>
 </head>
 <body>
 <h1>TODO: Title For Your Game</h1>
+<div id="author">by: TODO Your Name (TODO your andrewid)</div>
 <p>TODO: one-sentence summary of your game, highlighting the unique "hook" of the game.</p>
 <!-- the <div> wrapping this image centers it on the page. -->
 <!-- TODO: drawing showing the main view of the game during play -->
