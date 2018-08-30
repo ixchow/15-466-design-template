@@ -1,39 +1,98 @@
 <!DOCTYPE html>
 <!-- NOTE: the string 'TODO' appears everywhere you need to fill in information. -->
 <html>
+
 <head>
-<title>TODO:Title For Your Game</title>
-<!-- NOTE: this CSS sets up the ".figure" class to center images, and instructs images in ".figure"s to have space around them and to render crisp pixel edges when scaled [e.g. for retina displays]. -->
-<style>
-.figure {
-	text-align:center;
-}
-.figure > img {
-	margin: 0px 20px;
-	image-rendering: pixelated;
-}
-</style>
+	<title>Slippery Quest</title>
+	<!-- NOTE: this CSS sets up the ".figure" class to center images, and instructs images in ".figure"s to have space around them and to render crisp pixel edges when scaled [e.g. for retina displays]. -->
+	<style>
+		.figure {
+			text-align: center;
+		}
+
+		.figure>img {
+			margin: 0px 20px;
+			image-rendering: pixelated;
+		}
+	</style>
 </head>
+
 <body>
-<h1>TODO: Title For Your Game</h1>
-<p>TODO: one-sentence summary of your game, highlighting the unique "hook" of the game.</p>
-<!-- the <div> wrapping this image centers it on the page. -->
-<!-- TODO: drawing showing the main view of the game during play -->
-<div class="figure">
-<img src="game.png" />
-</div>
-<p>TODO: more information (2-3 sentences) about gameplay, referring to the image above.</p>
+	<h1>Slippery Quest</h1>
+	<p>This game is inspired by
+		<a href="https://bulbapedia.bulbagarden.net/wiki/Rocket_Hideout">Rocket Hideout Maze</a>
+		from the famous game Pokemon, featuring boost spots, teleportation gates, traps and bonus points</p>
 
-<h2>Gameplay</h2>
-<p>TODO: Describe how the game starts, plays (e.g. what are the controls), and ends.</p>
-<!-- TODO: illustrate your descriptions with more drawings -->
-<div class="figure">
-<img src="before-reset.png" />
-<img src="after-reset.png" />
-</div>
+	<div class="figure">
+		<img src="rocket hideout.png" style="height: 500px"/>
+		<p>One of the mazes in Rocket Hideout, image from <a href="https://www.serebii.net/pokearth/kanto/rockethideout.shtml">serebii.net</a></p>
+	</div>
+	<i>Some paragraghs are adapted from sample document (Stickoshet Robot).</i>
+	<p>The game is played on a 32 x 32 (board sizes are subject to change) board viewed from above. Tiles on the board may contain
+		walls, goals, boost spots, teleportation gates, traps, and slippery ice tiles. The player uses the arrow keys to control 
+		his/her character, with the aim of collecting any bonus points and then finally arriving at the goal. Once the player arrives
+		at the goal, a new challenge is randomly generated. The player can replay the level for many times, and his/her finishing
+		time will be diplayed and recorded. In order to motivate player pursuing the fastest solution.</p>
 
-<h2>Assets</h2>
-<p>TODO: Provide a link to any preliminary 3D models, sounds, or <a href="https://github.com/ixchow/amoeba-escape/blob/master/tiles.png">textures</a> for the game. Make sure to only link to assets with appropriate licenses.</p>
+	<h2>Gameplay</h2>
+
+	<p>
+		<b>Start:</b> Player's character, the target point and bonus points will be placed at random positions in the board. And the
+		other tiles of the boards will be initialized as other possible tile categories. The generation process will garantee that
+		There will be finally at least one possible route for player to reach the end point, with all the bonus points collected.
+		</p>
+
+	<p>At the beginning of the game, player will be given 15 seconds to observe the board and then figure out the shortest path
+		to reach the destination, with collecting bonus points as many as possible. The player can press the
+		<b>space</b>key to start the game at any time he/she wants, or the game will start when the thinking time is over</p>
+
+	<p>After the game starts, player can use arrow key to control his/her character. The character will have different behavior
+		on different types of tiles respectively.
+	</p>
+
+	<ul>
+		<li>Ice: The most common tile type is ice tile. Character is not capable to change its momentum on ice tiles. (It might be
+			interesting to give the ice tile "life point" - Ice will be thinner and eventually broken after character sliding over it.)</li>
+		<li>Land: Land tiles stop the character and have it standing on it. Player now can choose one from the four possible direction.</li>
+		<li>Boost spots: Boost spots are tiles that can change character's moving direction. Boost spots have four different kinds
+			- pointing up, down, left and right respectively</li>
+		<li>Teleportation gates: Teleportation gates appear in pairs in the board, and the pairs are identified by their color. When
+			character slide into one of the teleportation gates, it will be teleported to the paired gate and keep its momentum when
+			coming out of the gate. (We could also introduce "reversed gates", or "transposed gates", character's momentum will be
+			altered after being teleported)</li>
+		<li>Traps: Traps are tiles that are lethal to the character, the player should avoid commanding its avatar going in to this tile
+			and commit suicide. </li>
+		<li>Wall: When character hit the wall, its momentum will be reverted.</li>
+		<li>Bonus points: Bonus points scatter all over the board. It is not essentially a specific tile, but floating above the tiles.
+			User will collect the bonus points on some tiles when he slides through them.</li>
+	</ul>
+
+	<p>
+		<b>Finish:</b>When the player lands on the goal, the round is finished and the board is re-generated as described above. (Or
+		if the automatic generation process is difficult to implement, it could also be a good option to manually design
+		several levels and order them in a difficulty-ascending manner)
+	</p>
+
+	<div class="figure">
+		<img src="board.jpeg" style="height: 500px"/>
+		<p>The board will basically look like the figure above. It is garanteed that there is at least one possible route for the
+			player to finish the game</p>
+	</div>
+
+	<p>
+		<b>Drawing:</b> The board is drawed in top-view, 2D, pixel style. </p>
+
+	<h2>Assets</h2>
+	<p>Assets are found on
+		<a href="opengameart.org">opengameart.org</a>
+	</p>
+	<div class="figure">
+		<img src="spriteSheet.png" alt="">
+		<p>
+			<a href="https://opengameart.org/content/32x32-blocks-and-more">https://opengameart.org/content/32x32-blocks-and-more</a> by EntropyPhi in CC0 license.
+		</p>
+	</div>
 
 </body>
+
 </html>
